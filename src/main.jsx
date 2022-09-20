@@ -10,7 +10,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="https://my-heroes-app.vercel.app">
+    <BrowserRouter basename="/">
       <HeroesApp></HeroesApp>
     </BrowserRouter>
   </React.StrictMode>
