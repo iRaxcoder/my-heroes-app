@@ -1,46 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const HeroCard = (props) => {
-  console.log(props);
-  const img = props.thumbnail.path + "." + props.thumbnail.extension;
+export const HeroCard = (props = {}) => {
+  //console.log(props);
+  const img = props?.thumbnail?.path + "." + props?.thumbnail?.extension;
   return (
-    <div className="col-md-3">
-      <div class="card mb-3">
+    <div className="col-md-3 animate__animated animate__fadeInLeft">
+      <div className="card mb-3">
         <img
           src={img}
-          class="card-img"
+          className="card-img"
           style={{ height: "200px", objectFit: "cover" }}
-          alt={props.name + "'s img"}
+          alt={props?.name + "'s img"}
         />
-        <div class="card-body">
-          <h5 class="card-title">{props.name}</h5>
-          <p class="card-text">
-            {props.description
-              ? props.description.slice(0, 100).concat("...")
+        <div className="card-body">
+          <h5 className="card-title">{props?.name}</h5>
+          <p className="card-text">
+            {props?.description
+              ? props?.description.slice(0, 100).concat("...")
               : "no description available"}
           </p>
-          <p class="card-text">
-            <p class="fw-bold">
-              Comics: <small>{props.comics.available}</small>
-            </p>
+          <p className="card-text">
+            <b>Stories: </b>
+            {props?.comics?.available}
           </p>
-          <p class="card-text">
-            <p class="fw-bold">
-              Series: <small>{props.series.available}</small>
-            </p>
+          <p className="card-text">
+            <b>Series: </b>
+            {props?.series?.available}
           </p>
-          <p class="card-text">
-            <p class="fw-bold">
-              Stories: <small>{props.stories.available}</small>
-            </p>
+          <p className="card-text">
+            <b>Stories: </b>
+            {props?.stories?.available}
           </p>
-          <p class="card-text">
-            <small class="text-muted">
-              Last updated: {new Date(props.modified).toUTCString()}
+          <p className="card-text">
+            <small className="text-muted">
+              Last updated: {new Date(props?.modified).toUTCString()}
             </small>
           </p>
-          <Link to={"/hero/" + props.id}>More...</Link>
+          <Link style={{ color: "red" }} to={"/hero/" + props?.id}>
+            More...
+          </Link>
         </div>
       </div>
     </div>

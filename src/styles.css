@@ -3,3 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.btn {
+  border-color: black;
+  color: red;
+}
+
+.btn:hover {
+  background-color: #3d3c42 !important;
+  color: white !important;
+  border-color: black !important;
+}
+
+.form-control:focus {
+  border-color: #3d3c42;
+  box-shadow: 0 1px 1px rgb(202, 4, 4) inset, 0 0 8px rgb(196, 4, 4);
+  outline: 0 none;
+}

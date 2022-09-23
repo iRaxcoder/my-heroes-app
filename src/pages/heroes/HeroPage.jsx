@@ -11,11 +11,9 @@ export const HeroPage = () => {
     "characters/" + characterId + "?limit=20&"
   );
 
-  const {
-    data: comicData,
-    isLoading: isLoadingComic,
-    errors: errorsComic,
-  } = useFetch("characters/" + characterId + "/comics" + "?limit=5&");
+  const { data: comicData, isLoading: isLoadingComic } = useFetch(
+    "characters/" + characterId + "/comics" + "?limit=1&"
+  );
 
   useEffect(() => {
     setCharacter(data[0]);
@@ -38,10 +36,12 @@ export const HeroPage = () => {
         <h2>Loading character information</h2>
       ) : (
         <>
-          <h1>{character?.name}</h1>
+          <h1 className="animate__animated animate__fadeInLeft">
+            {character?.name}
+          </h1>
           <hr />
-          <div className="row">
-            <div className="col-12 col-sm-4">
+          <div className="row animate__animated animate__fadeInLeft">
+            <div className="col-12 col-sm-4 ">
               <img
                 className="card-img"
                 src={
@@ -50,7 +50,7 @@ export const HeroPage = () => {
                 alt=""
               />
             </div>
-            <div className="col-12 col-sm-4">
+            <div className="col-12 col-sm-4 ">
               <ul className="mt-2 list-group list-group-flush">
                 {character.description && (
                   <li className="list-group-item">
@@ -72,18 +72,20 @@ export const HeroPage = () => {
               </ul>
             </div>
           </div>
-          <h2 className="mt-2">Comics</h2>
+          <h2 className="mt-2 animate__animated animate__fadeInLeft">Comics</h2>
           <hr />
-          <div className="row">
+          <div className="row animate__animated animate__fadeInLeft">
+            {comics.length === 0 && <h5>No comics found</h5>}
             <div className="col-12">
               <div
                 id="carouselExampleInterval"
-                class="carousel slide"
+                className="carousel slide"
                 data-bs-ride="carousel"
               >
                 <div className="carousel-inner">
                   {comics?.map((comic, index) => (
                     <div
+                      key={comic.id}
                       className={`carousel-item  ${
                         index === 0 ? "active" : ""
                       } `}

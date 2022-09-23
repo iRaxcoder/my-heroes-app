@@ -5,11 +5,11 @@ import MarvelLogo from "../../assets/marvel-logo2.png";
 export const Navbar = () => {
   const navigate = useNavigate();
   const onLogout = () => {
-    navigate("/login", { replace: true });
+    navigate("/welcome-to-the-marvel-hub", { replace: true });
   };
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2 animate__animated animate__fadeInDown">
       <Link className="navbar-brand" to="/">
         <img
           src={MarvelLogo}
