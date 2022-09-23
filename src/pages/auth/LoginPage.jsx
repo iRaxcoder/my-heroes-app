@@ -27,7 +27,7 @@ export const LoginPage = () => {
           maxWidth: "540px",
           position: "relative",
           left: "50%",
-          transform: "translate(-50%,30vh)",
+          transform: "translate(-50%,25vh)",
         }}
       >
         <img src={Spidy} class="card-img" alt="..." />

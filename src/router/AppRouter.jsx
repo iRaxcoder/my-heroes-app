@@ -7,9 +7,8 @@ export const AppRouter = () => {
   return (
     <>
       <Routes>
-        <Route path="//welcome-to-the-marvel-hub" element={<LoginPage />} />
-        <Route path="/welcome-to-the-marvel-hub" element={<LoginPage />} />
-        <Route path="*" element={<HeroesRoutes />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/*" element={<HeroesRoutes />} />
       </Routes>
     </>
   );

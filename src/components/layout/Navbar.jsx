@@ -5,7 +5,7 @@ import MarvelLogo from "../../assets/marvel-logo2.png";
 export const Navbar = () => {
   const navigate = useNavigate();
   const onLogout = () => {
-    navigate("/welcome-to-the-marvel-hub", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (
