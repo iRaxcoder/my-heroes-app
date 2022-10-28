@@ -3,7 +3,6 @@ const ACCESS_PARAMS = import.meta.env.VITE_API_KEY;
 
 export const getDataFromUrl = async (query) => {
   const url = BASE_URL + query + ACCESS_PARAMS;
-  console.log(ACCESS_PARAMS);
 
   const resp = await fetch(url);
 
