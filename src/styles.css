@@ -20,3 +20,7 @@
   box-shadow: 0 1px 1px rgb(202, 4, 4) inset, 0 0 8px rgb(196, 4, 4);
   outline: 0 none;
 }
+
+#mount {
+  margin: 0;
+}
